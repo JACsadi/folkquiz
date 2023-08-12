@@ -14,6 +14,8 @@ fetch(mylink)
 function everything() {
   let ra = Math.floor(Math.random() * 1000) % song.length;
   let str = "";
+  let zzz = 10;
+  time.innerHTML = 10;
   do {
     str =
       song[ra].lyrics.split("<br>")[
@@ -24,6 +26,14 @@ function everything() {
   inp.innerHTML = `<input type="txt" class="jjj"> <button class="done">ANSWER</button>`;
   const ans = document.querySelector(".done");
   const jjj = document.querySelector(".jjj");
+  let bbb = setInterval(() => {
+    zzz--;
+    time.innerHTML = `${zzz}`;
+    console.log("hi");
+  }, 1000);
+  let a = setTimeout(() => {
+    ans.click();
+  }, 10050);
   ans.addEventListener("click", () => {
     console.log(jjj.value);
     console.log(song[ra].name.toLowerCase());
@@ -31,17 +41,23 @@ function everything() {
       jjj.value.toLowerCase().trimEnd() ===
       song[ra].name.split("_").join(" ").toLowerCase()
     ) {
-      a.innerHTML = `correct brother`;
-      a.style.backgroundColor = "green";
+      check.innerHTML = `correct brother`;
+      check.style.backgroundColor = "green";
     } else {
-      a.innerHTML = `wrong brother <br> the answer is ${song[ra].name}`;
-      a.style.backgroundColor = "red";
+      check.innerHTML = `wrong brother <br> the answer is ${song[ra].name}`;
+      check.style.backgroundColor = "red";
     }
+    clearInterval(bbb);
+    clearTimeout(a);
     everything();
+  });
+  windows.addEventListener("keydown", (a) => {
+    if (a.key == "Enter") ans.click();
   });
 }
 const st = document.querySelector(".start");
-const a = document.querySelector(".a");
+const check = document.querySelector(".check");
 const ques = document.querySelector(".inf");
 const inp = document.querySelector(".inputt");
+const time = document.querySelector(".time");
 st.addEventListener("click", everything);
