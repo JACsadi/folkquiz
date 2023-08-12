@@ -66,19 +66,6 @@ function everything() {
       return 0;
     });
     let isEnterKeyPressed = false;
-
-    window.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" && !isEnterKeyPressed) {
-        isEnterKeyPressed = true;
-        ans.click();
-      }
-    });
-
-    window.addEventListener("keyup", (event) => {
-      if (event.key === "Enter") {
-        isEnterKeyPressed = false;
-      }
-    });
   }
 }
 const st = document.querySelector(".start");
