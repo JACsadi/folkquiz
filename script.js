@@ -38,12 +38,12 @@ function everything() {
     inp.innerHTML = `<input type="txt" class="jjj"> <button class="done">ANSWER</button>`;
     const ans = document.querySelector(".done");
     const jjj = document.querySelector(".jjj");
-    let bbb = setInterval(() => {
+    const bbb = setInterval(() => {
       zzz--;
       time.innerHTML = `${zzz}`;
       console.log("hi");
     }, 1000);
-    let a = setTimeout(() => {
+    const a = setTimeout(() => {
       ans.click();
     }, 10050);
     ans.addEventListener("click", () => {
