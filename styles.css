@@ -1,14 +1,16 @@
 body {
-  background-color: rgb(55, 49, 49);
+  background-image: url("https://w0.peakpx.com/wallpaper/345/641/HD-wallpaper-taylor-swift-folklore.jpg");
   display: grid;
   grid-gap: 2em;
   grid-template-rows: 3fr 7fr;
   grid-auto-columns: minmax(200px, auto);
   padding: 10px;
-  margin: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hh {
   text-align: center;
+  color: lightgray;
 }
 .two {
   display: grid;
@@ -18,17 +20,17 @@ body {
 }
 .q {
   display: grid;
-  background-color: white;
-  /* grid-template-rows: 3fr 1fr;
-  grid-auto-columns: minmax(200px, auto); */
+  background-color: rgba(222, 145, 69, 0.1);
   padding: 80px;
+  font-size: 1.7rem;
   grid-auto-rows: minmax(50px, auto);
   justify-items: center;
   align-items: center;
 }
 .check {
   display: flex;
-  background-color: rgb(197, 131, 44);
+  background-color: rgba(197, 131, 44, 0.4);
+  font-size: 1.6rem;
   color: aliceblue;
   align-items: center;
   justify-content: center;
@@ -37,7 +39,7 @@ body {
 }
 .time {
   display: flex;
-  background-color: rgb(197, 7, 0);
+  background-color: rgb(197, 7, 0, 0.2);
   color: aliceblue;
   align-items: center;
   justify-content: center;
@@ -47,21 +49,30 @@ body {
 }
 .a {
   display: grid;
-  background-color: black;
+  /* background-color: rgba(7, 7, 7, 0.2); */
   padding: 40px;
   grid-auto-rows: minmax(50px, auto);
   justify-items: center;
   align-items: center;
 }
 .ques {
-  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.954);
+  font-size: 1.7rem;
   font: italic;
 }
 .inputt {
-  background-color: black;
   color: white;
 }
 .start {
+  background-color: black;
   height: 30px;
   width: 50px;
+}
+.jjj {
+  background-color: black;
+  width: auto;
+  height: 35px;
+}
+.done {
+  height: 35px;
 }

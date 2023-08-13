@@ -12,10 +12,16 @@ fetch(mylink)
   });
 
 function everything() {
-  console.log(i);
+  if (i == 0) {
+    check.innerHTML = `current highscore is : ${high}`;
+  }
   if (i == 10) {
     console.log(i);
     ques.innerHTML = `you got ${k} out of 10`;
+    if (k > high) {
+      high = k;
+      ques.innerHTML = ques.innerHTML + `<br> NEW HIGHSCORE - ${high}`;
+    }
     inp.innerHTML = `<button class="rstart">ReStart</button>`;
     i = 0;
     k = 0;
@@ -54,11 +60,11 @@ function everything() {
         song[ra].name.split("_").join(" ").toLowerCase()
       ) {
         check.innerHTML = `correct brother`;
-        check.style.backgroundColor = "green";
+        check.style.backgroundColor = "#32CD32";
         k++;
       } else {
         check.innerHTML = `wrong brother <br> the answer is ${song[ra].name}`;
-        check.style.backgroundColor = "red";
+        check.style.backgroundColor = "rgba(255, 0, 0,1)";
       }
       clearInterval(bbb);
       clearTimeout(a);
