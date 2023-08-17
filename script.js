@@ -18,12 +18,12 @@ function update() {
     .then((a) => ab.push(...a));
   ab.sort((a, b) => (a.score > b.score ? a : b));
   ab.forEach((a) => {
+    console.log(a);
     aa.innerHTML =
       aa.innerHTML +
       `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div> </div>`;
   });
 }
-update();
 function everything() {
   // if (i == 0) {
   //   check.innerHTML = `current highscore is : ${high}`;
@@ -124,3 +124,4 @@ st.addEventListener("click", () => {
   //   .then((a) => console.log(a))
   //   .catch(() => console.log("hate it"));
 });
+update();
