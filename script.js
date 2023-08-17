@@ -17,7 +17,7 @@ function update() {
     .then((a) => a.json())
     .then((a) => ab.push(...a));
   ab.sort((a, b) => (a.score > b.score ? a : b));
-  ab.foreach((a) => {
+  ab.forEach((a) => {
     aa.innerHTML =
       aa.innerHTML +
       `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div> </div>`;
@@ -102,7 +102,6 @@ function everything() {
       everything();
       return 0;
     });
-    let isEnterKeyPressed = false;
   }
 }
 const st = document.querySelector(".start");
