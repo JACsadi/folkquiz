@@ -66,6 +66,7 @@ body {
 }
 .jjj {
   background-color: black;
+  color: aliceblue;
   width: auto;
   height: 35px;
 }
@@ -92,6 +93,7 @@ body {
 .nam {
   margin-right: auto;
   margin-left: 10px;
+  color: aliceblue;
 }
 .score {
   margin-right: 10px;

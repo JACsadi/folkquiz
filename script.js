@@ -26,9 +26,6 @@ function update() {
     });
 }
 function everything() {
-  // if (i == 0) {
-  //   check.innerHTML = `current highscore is : ${high}`;
-  // }
   if (i == 10) {
     ques.innerHTML = `you got ${k} out of 10`;
     const newData = {
@@ -91,12 +88,7 @@ function everything() {
         jjj.value.toLowerCase().trimEnd() ===
         song[ra].name.split("_").join(" ").toLowerCase()
       ) {
-        // check.innerHTML = `correct brother`;
-        // check.style.backgroundColor = "#32CD32";
         k++;
-      } else {
-        // check.innerHTML = `wrong brother <br> the answer is ${song[ra].name}`;
-        // check.style.backgroundColor = "rgba(255, 0, 0,1)";
       }
       clearInterval(bbb);
       clearTimeout(a);
@@ -115,15 +107,5 @@ let playername = "";
 st.addEventListener("click", () => {
   playername = player.value;
   if (playername != "") everything();
-  // const newData = {
-  //   name: playername,
-  //   score: 0,
-  // };
-  // fetch(
-  //   `https://i-guess-i-am-making-a-rest-api.vercel.app/element?name=${player.value}`
-  // )
-  //   .then((a) => a.json())
-  //   .then((a) => console.log(a))
-  //   .catch(() => console.log("hate it"));
 });
 update();
