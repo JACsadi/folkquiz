@@ -100,7 +100,7 @@ st.addEventListener("click", () => {
       console.error("Error appending data:", error);
     });
   fetch(
-    `https://i-guess-i-am-making-a-rest-api.vercel.app\example?name=${player.value}`
+    `https://i-guess-i-am-making-a-rest-api.vercel.app/example?name=${player.value}`
   )
     .then((a) => a.json())
     .then((a) => console.log(a))
