@@ -102,7 +102,7 @@ st.addEventListener("click", () => {
   fetch(
     `https://i-guess-i-am-making-a-rest-api.vercel.app/?name=${player.value}`
   )
-    .then((a) => a.json)
+    .then((a) => a.json())
     .then((a) => console.log(a))
     .catch(() => console.log("hate it"));
   everything();
