@@ -16,8 +16,25 @@ function everything() {
   //   check.innerHTML = `current highscore is : ${high}`;
   // }
   if (i == 10) {
-    console.log(i);
     ques.innerHTML = `you got ${k} out of 10`;
+    const newData = {
+      name: palyername,
+      score: k,
+    };
+    fetch("https://i-guess-i-am-making-a-rest-api.vercel.app/a", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Data appended successfully:", data);
+      })
+      .catch((error) => {
+        console.error("Error appending data:", error);
+      });
     if (k > high) {
       high = k;
       ques.innerHTML = ques.innerHTML + `<br> NEW HIGHSCORE - ${high}`;
@@ -79,31 +96,18 @@ const ques = document.querySelector(".inf");
 const inp = document.querySelector(".inputt");
 const time = document.querySelector(".time");
 const player = document.querySelector(".jjj");
+let palyername = "";
 st.addEventListener("click", () => {
   const plaername = player.value;
-  const newData = {
-    name: plaername,
-    score: 0,
-  };
-  fetch("https://i-guess-i-am-making-a-rest-api.vercel.app/a", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Data appended successfully:", data);
-    })
-    .catch((error) => {
-      console.error("Error appending data:", error);
-    });
-  fetch(
-    `https://i-guess-i-am-making-a-rest-api.vercel.app/element?name=${player.value}`
-  )
-    .then((a) => a.json())
-    .then((a) => console.log(a))
-    .catch(() => console.log("hate it"));
-  everything();
+  if (plaername != "") everything();
+  // const newData = {
+  //   name: plaername,
+  //   score: 0,
+  // };
+  // fetch(
+  //   `https://i-guess-i-am-making-a-rest-api.vercel.app/element?name=${player.value}`
+  // )
+  //   .then((a) => a.json())
+  //   .then((a) => console.log(a))
+  //   .catch(() => console.log("hate it"));
 });
