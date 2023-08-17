@@ -103,6 +103,8 @@ st.addEventListener("click", () => {
     `https://i-guess-i-am-making-a-rest-api.vercel.app/?name=${player.value}`
   )
     .then((a) => a.json)
-    .then((a) => console.log(a));
+    .then((a) => console.log(a))
+    .catch(() => console.log("hate it"));
+
   everything();
 });
