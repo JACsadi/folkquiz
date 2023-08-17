@@ -12,9 +12,9 @@ fetch(mylink)
   });
 
 function everything() {
-  if (i == 0) {
-    check.innerHTML = `current highscore is : ${high}`;
-  }
+  // if (i == 0) {
+  //   check.innerHTML = `current highscore is : ${high}`;
+  // }
   if (i == 10) {
     console.log(i);
     ques.innerHTML = `you got ${k} out of 10`;
@@ -59,12 +59,12 @@ function everything() {
         jjj.value.toLowerCase().trimEnd() ===
         song[ra].name.split("_").join(" ").toLowerCase()
       ) {
-        check.innerHTML = `correct brother`;
-        check.style.backgroundColor = "#32CD32";
+        // check.innerHTML = `correct brother`;
+        // check.style.backgroundColor = "#32CD32";
         k++;
       } else {
-        check.innerHTML = `wrong brother <br> the answer is ${song[ra].name}`;
-        check.style.backgroundColor = "rgba(255, 0, 0,1)";
+        // check.innerHTML = `wrong brother <br> the answer is ${song[ra].name}`;
+        // check.style.backgroundColor = "rgba(255, 0, 0,1)";
       }
       clearInterval(bbb);
       clearTimeout(a);
@@ -75,8 +75,29 @@ function everything() {
   }
 }
 const st = document.querySelector(".start");
-const check = document.querySelector(".check");
 const ques = document.querySelector(".inf");
 const inp = document.querySelector(".inputt");
 const time = document.querySelector(".time");
-st.addEventListener("click", everything);
+const player = document.querySelector(".jjj");
+st.addEventListener("click", () => {
+  const plaername = player.value;
+  const newData = {
+    name: plaername,
+    score: 0,
+  };
+  fetch("https://i-guess-i-am-making-a-rest-api.vercel.app/a", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Data appended successfully:", data);
+    })
+    .catch((error) => {
+      console.error("Error appending data:", error);
+    });
+  everything();
+});
