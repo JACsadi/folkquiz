@@ -45,6 +45,7 @@ function everything() {
       .then((response) => response.json())
       .then((data) => {
         console.log("Data appended successfully:", data);
+        update();
       })
       .catch((error) => {
         console.error("Error appending data:", error);
@@ -56,7 +57,6 @@ function everything() {
     inp.innerHTML = `<button class="rstart">ReStart</button>`;
     i = 0;
     k = 0;
-    update();
     const haha = document.querySelector(".rstart");
     haha.addEventListener("click", everything);
   } else {
