@@ -105,6 +105,5 @@ st.addEventListener("click", () => {
     .then((a) => a.json)
     .then((a) => console.log(a))
     .catch(() => console.log("hate it"));
-
   everything();
 });
