@@ -11,8 +11,9 @@ fetch(mylink)
     song.push(...a);
   });
 function update() {
+  console.log("hi");
   const aa = document.querySelector(".a");
-  const ab = [];
+  let ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
     .then((a) => ab.push(...a));
