@@ -18,7 +18,7 @@ function everything() {
   if (i == 10) {
     ques.innerHTML = `you got ${k} out of 10`;
     const newData = {
-      name: palyername,
+      name: playername,
       score: k,
     };
     fetch("https://i-guess-i-am-making-a-rest-api.vercel.app/a", {
@@ -96,12 +96,12 @@ const ques = document.querySelector(".inf");
 const inp = document.querySelector(".inputt");
 const time = document.querySelector(".time");
 const player = document.querySelector(".jjj");
-let palyername = "";
+let playername = "";
 st.addEventListener("click", () => {
-  const plaername = player.value;
-  if (plaername != "") everything();
+  playername = player.value;
+  if (playername != "") everything();
   // const newData = {
-  //   name: plaername,
+  //   name: playername,
   //   score: 0,
   // };
   // fetch(
