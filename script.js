@@ -13,7 +13,7 @@ fetch(mylink)
 function update() {
   console.log("hi");
   console.log(aa.innerHTML);
-  let ab = [];
+  const ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
     .then((a) => ab.push(...a));
