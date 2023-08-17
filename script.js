@@ -13,16 +13,18 @@ fetch(mylink)
 function update() {
   console.log("hi");
   const aa = document.querySelector(".a");
+  console.log(aa.innerHTML);
   let ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
     .then((a) => ab.push(...a));
   ab.sort((a, b) => (a.score > b.score ? a : b));
+  console.log(ab);
   ab.forEach((a) => {
     console.log(a);
     aa.innerHTML =
       aa.innerHTML +
-      `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div> </div>`;
+      `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div></div>`;
   });
 }
 function everything() {
