@@ -11,16 +11,14 @@ fetch(mylink)
     song.push(...a);
   });
 function update() {
-  console.log("hi");
-  console.log(aa.innerHTML);
   const ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
     .then((a) => {
       ab.push(...a);
-      ab.sort((a, b) => (a.score > b.score ? 1 : -1));
+      ab.sort((a, b) => (a.score > b.score ? -1 : 1));
       ab.forEach((a) => {
-        console.log(a);
+        aa.innerHTML = `<div class="titlee">LeaderBoard</div><div class="party"><div class="nam">NAME</div><div class="score">Score</div></div>`;
         aa.innerHTML =
           aa.innerHTML +
           `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.score}</div></div>`;
