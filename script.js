@@ -18,9 +18,12 @@ function update() {
     .then((a) => ab.push(...a));
   ab.sort((a, b) => (a.score > b.score ? a : b));
   ab.foreach((a) => {
-    a.innerHTML = a.innerHTML + ``;
+    a.innerHTML =
+      a.innerHTML +
+      `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div> </div>`;
   });
 }
+update();
 function everything() {
   // if (i == 0) {
   //   check.innerHTML = `current highscore is : ${high}`;
@@ -52,6 +55,7 @@ function everything() {
     inp.innerHTML = `<button class="rstart">ReStart</button>`;
     i = 0;
     k = 0;
+    update();
     const haha = document.querySelector(".rstart");
     haha.addEventListener("click", everything);
   } else {
