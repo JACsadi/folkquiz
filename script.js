@@ -12,13 +12,12 @@ fetch(mylink)
   });
 function update() {
   console.log("hi");
-  const aa = document.querySelector(".a");
   console.log(aa.innerHTML);
   let ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
     .then((a) => ab.push(...a));
-  ab.sort((a, b) => (a.score > b.score ? a : b));
+  ab.sort((a, b) => (a.score > b.score ? 1 : -1));
   console.log(ab);
   ab.forEach((a) => {
     console.log(a);
@@ -112,6 +111,7 @@ const ques = document.querySelector(".inf");
 const inp = document.querySelector(".inputt");
 const time = document.querySelector(".time");
 const player = document.querySelector(".jjj");
+const aa = document.querySelector(".a");
 let playername = "";
 st.addEventListener("click", () => {
   playername = player.value;
