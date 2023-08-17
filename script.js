@@ -16,15 +16,16 @@ function update() {
   const ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
-    .then((a) => ab.push(...a));
-  ab.sort((a, b) => (a.score > b.score ? 1 : -1));
-  console.log(ab);
-  ab.forEach((a) => {
-    console.log(a);
-    aa.innerHTML =
-      aa.innerHTML +
-      `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div></div>`;
-  });
+    .then((a) => {
+      ab.push(...a);
+      ab.sort((a, b) => (a.score > b.score ? 1 : -1));
+      ab.forEach((a) => {
+        console.log(a);
+        aa.innerHTML =
+          aa.innerHTML +
+          `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.score}</div></div>`;
+      });
+    });
 }
 function everything() {
   // if (i == 0) {
