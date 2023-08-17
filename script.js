@@ -11,15 +11,15 @@ fetch(mylink)
     song.push(...a);
   });
 function update() {
-  const a = document.querySelector(".a");
+  const aa = document.querySelector(".a");
   const ab = [];
   fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
     .then((a) => a.json())
     .then((a) => ab.push(...a));
   ab.sort((a, b) => (a.score > b.score ? a : b));
   ab.foreach((a) => {
-    a.innerHTML =
-      a.innerHTML +
+    aa.innerHTML =
+      aa.innerHTML +
       `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.Score}</div> </div>`;
   });
 }
