@@ -17,8 +17,8 @@ function update() {
     .then((a) => {
       ab.push(...a);
       ab.sort((a, b) => (a.score > b.score ? -1 : 1));
+      aa.innerHTML = `<div class="titlee">LeaderBoard</div><div class="party"><div class="nam">NAME</div><div class="score">Score</div></div>`;
       ab.forEach((a) => {
-        aa.innerHTML = `<div class="titlee">LeaderBoard</div><div class="party"><div class="nam">NAME</div><div class="score">Score</div></div>`;
         aa.innerHTML =
           aa.innerHTML +
           `<div class="party"><div class="nam">${a.name}</div><div class="score">${a.score}</div></div>`;
